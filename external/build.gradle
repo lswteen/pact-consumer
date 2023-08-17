@@ -10,14 +10,14 @@ jar {
     archiveClassifier = ''
     enabled = true
 }
-group 'com.pact.consumer'
-version '0.0.1-SNAPSHOT'
+group '$group'
+version '$version'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
 }
