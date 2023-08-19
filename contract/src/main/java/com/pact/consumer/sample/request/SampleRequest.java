@@ -10,4 +10,5 @@ import lombok.*;
 public class SampleRequest {
     private Long id;
     private String name;
+    private String info;
 }
