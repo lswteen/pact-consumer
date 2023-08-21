@@ -42,10 +42,5 @@ VALUES
     (778422, 7),
     (648418, 5);
 
-INSERT INTO sample(name, info)
-VALUES
-    ('test_name_1','test_info_1'),
-    ('test_name_2','test_info_2'),
-    ('test_name_3','test_info_3'),
-    ('test_name_4','test_info_4'),
-    ('test_name_5','test_info_5');
+
+

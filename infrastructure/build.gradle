@@ -17,6 +17,10 @@ repositories {
     mavenCentral()
 }
 
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
 dependencies {
     implementation project(":consumer-contract")
     implementation project(":consumer-domain")
@@ -28,6 +32,11 @@ dependencies {
     // h2
     runtimeOnly 'com.h2database:h2'
     testImplementation 'com.h2database:h2'
+
+    // mapstruct
+    implementation "org.mapstruct:mapstruct:$mapstructVersion"
+    annotationProcessor "org.mapstruct:mapstruct-processor:$mapstructVersion"
+    testAnnotationProcessor "org.mapstruct:mapstruct-processor:$mapstructVersion"
 
     implementation 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
@@ -44,3 +53,4 @@ compileJava {
             '-Amapstruct.defaultInjectionStrategy=constructor'
     ]
 }
+

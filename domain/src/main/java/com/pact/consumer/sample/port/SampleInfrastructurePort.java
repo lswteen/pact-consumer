@@ -3,18 +3,21 @@ package com.pact.consumer.sample.port;
 import lombok.*;
 
 public interface SampleInfrastructurePort {
-
-    SampleInfrastructure findById(Long id);
+    Sample findById(Long id);
 
     @NoArgsConstructor
-    @AllArgsConstructor
     @Builder
     @Getter
     @ToString
-    class SampleInfrastructure{
+    class Sample{
         private Long id;
         private String name;
         private String info;
 
+        public Sample(Long id, String name, String info) {
+            this.id = id;
+            this.name = name;
+            this.info = info;
+        }
     }
 }
