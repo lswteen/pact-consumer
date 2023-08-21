@@ -17,8 +17,9 @@ configurations {
 
 dependencies {
     // module project
+    implementation project(":consumer-contract")
     implementation project(":consumer-domain")
-//    implementation project(":consumer-infrastructure")
+    implementation project(":consumer-infrastructure")
 //    implementation project(":consumer-external")
 
     implementation 'org.springframework.boot:spring-boot-starter'
