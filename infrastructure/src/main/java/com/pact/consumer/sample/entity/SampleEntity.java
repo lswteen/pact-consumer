@@ -21,7 +21,8 @@ public class SampleEntity {
     private String info;
 
     @Builder
-    public SampleEntity(String name, String info) {
+    public SampleEntity(Long id,String name, String info) {
+        this.id = id;
         this.name = name;
         this.info = info;
     }
