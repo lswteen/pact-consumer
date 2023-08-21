@@ -18,7 +18,5 @@ repositories {
 }
 
 dependencies {
-    // openapi 3.0
-    implementation "org.springdoc:springdoc-openapi-ui:$openApiUiVersion"
     implementation 'org.projectlombok:lombok:1.18.20'
 }

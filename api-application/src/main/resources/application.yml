@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: never
+    include-exception: false
+
+logging:
+  level:
+    org.springframework.boot.autoconfigure: info
+    org.hibernate.type.descriptor.sql: trace
+
+# Swagger UI
+springdoc:
+  swagger-ui:
+    path: /${spring.application.name}/swagger-ui.html
+    displayRequestDuration: true
+    operationsSorter: method
+    tagsSorter: alpha
+  default-produces-media-type: application/json

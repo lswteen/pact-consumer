@@ -18,6 +18,9 @@ repositories {
 }
 
 dependencies {
+    implementation project(":consumer-contract")
+    implementation project(":consumer-domain")
+
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
 }

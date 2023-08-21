@@ -10,6 +10,7 @@ public interface SampleExternalPort {
     @Getter
     @Builder
     @ToString
+    @EqualsAndHashCode
     class SampleExternal{
         private Long id;
         private String name;

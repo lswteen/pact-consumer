@@ -1,13 +1,14 @@
 package com.pact.consumer.sample.property;
 
-import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Getter
-@Builder
+@Setter
 @Configuration
+@ConfigurationProperties(prefix = "server.error")
 public class SampleProperties {
     private String includeMessage;
     private String includeBindingErrors;
