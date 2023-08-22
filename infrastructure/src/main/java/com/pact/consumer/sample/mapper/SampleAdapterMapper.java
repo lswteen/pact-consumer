@@ -7,8 +7,6 @@ import com.pact.consumer.sample.result.SampleResult;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import java.util.Optional;
-
 @Mapper(config= MapstructConfig.class)
 public interface SampleAdapterMapper {
     SampleAdapterMapper INSTANCE = Mappers.getMapper(SampleAdapterMapper.class);

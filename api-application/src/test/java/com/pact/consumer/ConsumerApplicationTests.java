@@ -5,6 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(classes = ConsumerApplication.class)
 class ConsumerApplicationTests {
+
     @Test
     void contextLoads(){
     }
