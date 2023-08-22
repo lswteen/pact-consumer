@@ -3,9 +3,13 @@ package com.pact.consumer.sample.port;
 import com.pact.consumer.sample.request.SampleRequest;
 import lombok.*;
 
+import java.util.List;
+
 public interface SampleInfrastructurePort {
     SampleInfrastructurePort.Sample findById(Long id);
+    List<Sample> findAll();
     void save(Sample request);
+    void remove(Sample request);
 
     @NoArgsConstructor
     @Builder

@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @RequiredArgsConstructor
@@ -26,8 +27,19 @@ public class SampleInfrastructureAdapter implements SampleInfrastructurePort {
     }
 
     @Override
+    public List<Sample> findAll() {
+        return sampleAdapterMapper.INSTANCE.toSampleList(sampleRepository.findAll());
+    }
+
+    @Override
     public void save(SampleInfrastructurePort.Sample request) {
         sampleRepository.save(sampleAdapterMapper.INSTANCE.toSampleEntity(request));
     }
+
+    @Override
+    public void remove(Sample request) {
+
+    }
+
 
 }

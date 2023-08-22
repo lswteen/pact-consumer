@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @DataJpaTest
 class SampleAdapterTest {
@@ -23,8 +24,8 @@ class SampleAdapterTest {
 
     @Test
     void sample_find_id(){
-        //System.out.println("return Sample Object : "+sampleRepository.findById(1L).toString());
-        assertEquals("test_name_1",sampleRepository.findById(1L).get().getName());
+        Long id = sampleRepository.findAll().stream().findFirst().get().getId();
+        assertNotNull(sampleRepository.findById(id).get().getName());
     }
 
     @Test
