@@ -1,10 +1,8 @@
 package com.pact.consumer.sample;
 
-import com.pact.consumer.sample.entity.SampleEntity;
 import com.pact.consumer.sample.infrastructure.SampleRepository;
 import com.pact.consumer.sample.mapper.SampleAdapterMapper;
 import com.pact.consumer.sample.port.SampleInfrastructurePort;
-import com.pact.consumer.sample.request.SampleRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -32,13 +30,14 @@ public class SampleInfrastructureAdapter implements SampleInfrastructurePort {
     }
 
     @Override
-    public void save(SampleInfrastructurePort.Sample request) {
-        sampleRepository.save(sampleAdapterMapper.INSTANCE.toSampleEntity(request));
+    public Sample save(SampleInfrastructurePort.Sample sample) {
+        sampleRepository.save(sampleAdapterMapper.INSTANCE.toSampleEntity(sample));
+        return sample;
     }
 
     @Override
-    public void remove(Sample request) {
-
+    public void remove(Sample sample) {
+        sampleRepository.delete(sampleAdapterMapper.INSTANCE.toSampleEntity(sample));
     }
 
 

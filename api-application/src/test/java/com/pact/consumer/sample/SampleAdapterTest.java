@@ -31,7 +31,7 @@ class SampleAdapterTest {
     @Test
     void sample_save(){
         SampleEntity sampleEntity = new SampleEntity("test_name_2","test_info_2");
-        assertEquals("test_name_2",sampleRepository.save(sampleEntity).getName());
+        assertEquals(sampleEntity.getName(),sampleRepository.save(sampleEntity).getName());
     }
 
     @Test

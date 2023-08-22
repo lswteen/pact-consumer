@@ -9,7 +9,7 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-@Mapper(config= MapstructConfig.class)
+@Mapper(config = MapstructConfig.class)
 public interface SampleAdapterMapper {
     SampleAdapterMapper INSTANCE = Mappers.getMapper(SampleAdapterMapper.class);
 

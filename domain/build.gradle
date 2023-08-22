@@ -2,6 +2,32 @@ plugins {
     id 'java'
 }
 
+
+dependencies {
+    implementation project(":consumer-contract")
+
+    // spring
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+    // mapstruct
+    implementation "org.mapstruct:mapstruct:$mapstructVersion"
+    annotationProcessor "org.mapstruct:mapstruct-processor:$mapstructVersion"
+    testAnnotationProcessor "org.mapstruct:mapstruct-processor:$mapstructVersion"
+
+    // lombok mapstruct binding
+    annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
+
+    implementation 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+//    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+}
+
 bootJar {
     enabled = false
 }
@@ -17,29 +43,9 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation project(":consumer-contract")
-
-    // spring
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
-    implementation 'org.springframework.boot:spring-boot-starter-aop'
-
-    // mapstruct
-    implementation "org.mapstruct:mapstruct:$mapstructVersion"
-    annotationProcessor "org.mapstruct:mapstruct-processor:$mapstructVersion"
-    testAnnotationProcessor "org.mapstruct:mapstruct-processor:$mapstructVersion"
-
-    // lombok mapstruct binding
-    annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
-
-    implementation 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
-}
+//test {
+//    useJUnitPlatform()
+//}
 
 compileJava {
     options.compilerArgs += [
@@ -47,4 +53,5 @@ compileJava {
             '-Amapstruct.defaultInjectionStrategy=constructor'
     ]
 }
+
 

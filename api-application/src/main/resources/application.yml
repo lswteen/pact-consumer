@@ -6,11 +6,6 @@ server:
     include-stacktrace: never
     include-exception: false
 
-logging:
-  level:
-    org.springframework.boot.autoconfigure: info
-    org.hibernate.type.descriptor.sql: trace
-
 # Swagger UI
 springdoc:
   swagger-ui:

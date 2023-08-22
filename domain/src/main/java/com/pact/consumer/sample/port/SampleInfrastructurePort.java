@@ -1,14 +1,16 @@
 package com.pact.consumer.sample.port;
 
-import com.pact.consumer.sample.request.SampleRequest;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
 public interface SampleInfrastructurePort {
     SampleInfrastructurePort.Sample findById(Long id);
     List<Sample> findAll();
-    void save(Sample request);
+    Sample save(Sample request);
     void remove(Sample request);
 
     @NoArgsConstructor
